@@ -14,6 +14,7 @@ public class Practice_02 {
 		num2 = num1 - num2;
 		num1 = num1 - num2;
 		System.out.println("Before swapping: "+num1 +":"+num2);
+		//test
 	}
 	
 	public static void main(String[] args) {
