@@ -216,37 +216,24 @@ public class Practice_06 {
 	public static void missingElementinArray(int arr[]) {
 		System.out.println();
 		System.out.println("----------------------------------Find missing in Array in program 11 --------------------------");
-		int num =0;
-		int num1 = 0;
+		int sum1 =0;
+		int sum2 = 0;
 		
-		for(int i:arr)
+		int len = arr.length;
+		
+		for(int i=0; i<len; i++)
 		{
-			num = num + i;
+			sum1 = sum1 + arr[i];
 		}
-		
-		int sum2 =0;
-		for(int k=0; k<=arr.length-1;k++)
-		{
-			sum2 = sum2 + k;
-		}
-		
-		int c1 =arr[0];
-		System.out.println("length"+arr.length);
-		int l = ((arr.length)-1);
-		int c2 = l;
-		//System.out.println("length: "+c2);
-		
-		
+		int c1=arr[0];
+		int c2=arr[len-1];
 		for(int j=c1; j<=c2; j++)
 		{
-			num1 = num1 + j;
-			//System.out.println(num1);
+			sum2 = sum2 + j;
 		}
+		System.out.println("Missing Element in Array: "+(sum2-sum1));
+			
 		
-		System.out.println(num);
-		System.out.println(num1);
-		System.out.println("test: "+sum2);
-		System.out.println("Missing Element in Array: "+(num - num1));
 	}
 	
 	
@@ -256,7 +243,7 @@ public class Practice_06 {
 		String str ="Yoogi";
 		int iarr[] = {1, 2, 2, 2, 3, 4, 5};
 		String strArr[] = {"T2T", "tes", "22B"};
-		int marr[] = {1,3,4};
+		int marr[] = {1,2,4};
 		
 		intSwap(num1, num2);
 		checkPrime(num1);
@@ -270,13 +257,7 @@ public class Practice_06 {
 		FindElementinArray(iarr, 5);
 		missingElementinArray(marr);
 		
-		int s1=0;
-		for(int i=0; i<=3; i++)
-		{
-			s1 = s1 +i;
-		}
-		System.out.println(s1);
-
+		
 	}
 
 }

@@ -10,7 +10,7 @@ public class Practice_05 {
 		System.out.println("********************* Executing Swap numbers 1*****************************");
 		System.out.println("Before swapping the numbers: "+num1 +":"+num2);
 		int t= 0;
-		
+		 
 		t = num1;
 		num1 = num2;
 		num2 = t;
