@@ -45,6 +45,7 @@ public class Practice_08 {
 		}
 	}
 	
+	
 	public static void generatePrimenum(int num1, int num2)
 	{
 		System.out.println("---------------------------- Executing int Swap Program 3 -------------------------------------");
@@ -63,8 +64,19 @@ public class Practice_08 {
 				System.out.print(i+" ");
 			}
 		}
+	System.out.println();
 	}
 	
+	
+	public static void reverseString(String str)
+	{
+		String rev = "";
+		for(int i=str.length()-1; i>=0; i--)
+		{
+			rev = rev + str.charAt(i);
+		}
+		System.out.println(rev);
+	}
 	
 	public static void main(String[] args) {
 	
@@ -82,6 +94,7 @@ public class Practice_08 {
 		intSwap(num1, num2);
 		chekPrime(num2);
 		generatePrimenum(num1, num2);
+		reverseString(str);
 		
 		
 		
