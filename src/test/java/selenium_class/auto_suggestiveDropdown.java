@@ -1,6 +1,7 @@
 package selenium_class;
 
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,12 @@ public class auto_suggestiveDropdown {
 		dr.findElement(By.name("q")).sendKeys("Selenium");
 		Thread.sleep(5000);
 		List<WebElement> allopt = dr.findElements(By.xpath("//ul[@role='listbox']//li//div[@class='wM6W7d']"));
+		Set<String> windId = dr.getWindowHandles();
+		for(String id:windId)
+		{
+			dr.switchTo().window(id);
+			
+		}
 		
 		
 		for(int i=0; i<=allopt.size(); i++) 
