@@ -16,13 +16,14 @@ public class Practice_09 {
 				}
 			}
 		}
+		System.out.println();
 		
 	}
 	
-	public static int[] uniqueArray(int[] arr) {
+	public static  void uniqueArray(int[] arr) {
 		int j=0;
 		if(arr==null || arr.length<=1) {
-			return arr;
+			System.out.println(arr.toString());
 		}else
 		{
 			Arrays.sort(arr);
@@ -37,8 +38,31 @@ public class Practice_09 {
 			
 		}
 		arr[j++] = arr[arr.length-1];
-		return Arrays.copyOf(arr, j);
+		int arr3[] = Arrays.copyOf(arr, j);
+		System.out.println(Arrays.toString(arr3));
 		
+	}
+	
+	
+	public static void findUniqArray(int arr[]) {
+		int j=0;
+		if(arr.length<=1 || arr==null)
+		{
+			System.out.println(Arrays.toString(arr));
+		}else
+		{
+			Arrays.sort(arr);
+			for(int i=0; i<arr.length-1; i++)
+			{
+				if(arr[i]!=arr[i+1])
+				{
+					arr[j++] = arr[i];
+				}
+			}
+		}
+		arr[j++] = arr[arr.length-1];
+		int uniArray[] = Arrays.copyOf(arr, j);
+		System.out.println(Arrays.toString(uniArray));
 	}
 	
 	
@@ -47,8 +71,9 @@ public class Practice_09 {
 	
 		int[] numbers = {5, 2, 8, 2, 5, 1, 8, 9};
 		findDuplicateElementInArraY(arr);
-		int[] arr2 = uniqueArray(arr);
-		System.out.println(Arrays.toString(arr2));
+		System.out.println(Arrays.toString(numbers));
+		uniqueArray(numbers);
+		findUniqArray(arr);
        
 	}
 }
