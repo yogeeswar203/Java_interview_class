@@ -209,6 +209,28 @@ public class Practice_11 {
 		String[] unStr = newStr.toArray(new String[0]);
 		System.out.println("Given Array is: "+Arrays.toString(unStr));
 	}
+	
+	
+	public static void missingElementinArray(int arr[]) {
+		System.out.println("--------------------------------------------------------- Program 12 ------------------------------------------------");
+		int sum1 = 0;
+		int sum2 = 0;
+		
+		for(int i=0; i<arr.length-1; i++) 
+		{
+			sum1 = sum1 + arr[i];
+		}
+		
+		for(int i=arr[0]; i<arr[arr.length-1]; i++)
+		{
+			sum2 = sum2 + i;
+			
+		}
+		int missingEl = (sum2 - sum1);
+		System.out.println("Missing Elemement in Array: "+missingEl);
+		
+	}
+	
 	public static void main(String[] args) {
 	
 		// Declaring the variables
@@ -221,7 +243,7 @@ public class Practice_11 {
 				
 		int arr[] = {1,1, 2, 2, 3, 4, 4, 5, 6};
 		int arRe[] = {1,1, 2, 2, 3, 4, 4,4, 5, 6};
-		int missingArr[] = {86, 87, 88, 90};
+		int missingArr[] = {81, 83, 84, 85};
 		Integer arr3[] = {1,1, 2, 2, 3, 4, 4,4, 5, 6};
 		
 		// Calling the methods 
@@ -237,6 +259,7 @@ public class Practice_11 {
 		uniArr(arr);
 		uniarrSet(arr3);
 		uniString(str1);
+		missingElementinArray(missingArr);
 
 	}
 
