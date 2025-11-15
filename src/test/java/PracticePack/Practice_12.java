@@ -1,6 +1,10 @@
 package PracticePack;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.sun.tools.javac.code.Attribute.Array;
 
 public class Practice_12 {
 	
@@ -107,20 +111,40 @@ public class Practice_12 {
 	}
 	
 	public static void uniArry(int arr[]) {
-		System.out.println("--------------------------------------------------- Program 6 --------------------------------------------");
-		int j= 0;
+		int j = 0;
 		Arrays.sort(arr);
 		
 		for(int i=0; i<arr.length-1; i++)
 		{
+			
 			if(arr[i] == arr[i+1])
 			{
 				arr[j++] = arr[i];
 			}
 		}
+		
 		arr[j++] = arr[arr.length-1];
-		int newUni[] = Arrays.copyOf(arr, j);
-		System.out.println(Arrays.toString(newUni));
+		int newArr[] = Arrays.copyOf(arr, j);
+		System.out.println(Arrays.toString(newArr));
+	}
+	
+	
+	public static void arrSet(Integer arr[]) {
+		System.out.println("--------------------------------------------------- Program 6 --------------------------------------------");
+		System.out.println("Original Array: "+Arrays.toString(arr));
+		Set<Integer> newAr = new HashSet<Integer>(Arrays.asList(arr)); 
+		Integer[] uniArry2 = newAr.toArray(new Integer[0]);
+		System.out.println("Uniquie Array: "+Arrays.toString(uniArry2));
+		
+	}
+	
+	public static void uniString(String str[]) {
+		System.out.println("--------------------------------------------------- Program 7 --------------------------------------------");
+		System.out.println("Original Array: "+Arrays.toString(str));
+		Set<String> newSet = new HashSet<String>(Arrays.asList(str));
+		String uniArr[] = newSet.toArray(new String [0]);
+		
+		System.out.println("Unique Array: "+Arrays.toString(uniArr));
 	}
 
 	
@@ -151,8 +175,8 @@ public class Practice_12 {
 		
 		duplicateinArray(arr);
 		uniArry(arr);
-		
-		
+		arrSet(arr3);
+		uniString(str1);	
 				
 	}
 
