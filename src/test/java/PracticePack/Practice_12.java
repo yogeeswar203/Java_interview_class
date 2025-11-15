@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.sun.tools.javac.code.Attribute.Array;
+
 
 public class Practice_12 {
 	
@@ -146,7 +146,53 @@ public class Practice_12 {
 		
 		System.out.println("Unique Array: "+Arrays.toString(uniArr));
 	}
+	
+	public static void checkPalandromeString(String str) {
+		System.out.println("--------------------------------------------------- Program 8 --------------------------------------------");
+		String rev = "";
+		
+		for(int i=str.length()-1; i>=0; i--) {
+			rev = rev + str.charAt(i);
+		}
+		if(rev.equals(str))
+		{
+			System.out.println("Given Sting is Palandrome: "+rev);
+		}else
+		{
+			System.out.println("Given String is not Palandrome: "+str);
+		}
+		System.out.println("--------------------------------------------------- Program 9 --------------------------------------------");
+	}
 
+	
+	public static String recursiveStr(String str) {
+		if(str.length()<=1 || str==null) {
+			return str;
+		}
+		
+		char c = str.charAt(0);
+		String remString  = str.substring(1);
+		
+		return recursiveStr(remString)+c;
+	}
+	
+	public static void missingElement(int[]arr) {
+		System.out.println("--------------------------------------------------- Program 10 --------------------------------------------");
+		int sum1 = 0;
+		int sum2 = 0;
+		
+		for(int i=0; i<arr.length-1; i++)
+		{
+			sum1 = sum1 + arr[i];
+		}
+		
+		for(int i=arr[0]; i<arr[arr.length-1]; i++)
+		{
+			sum2 = sum2 + i;
+		}
+		
+		System.out.println("Missing Element in Array: "+(sum2-sum1));
+	}
 	
 	
 	
@@ -157,7 +203,7 @@ public class Practice_12 {
 		int num2 = 30;
 		int num3 = 121;
 		
-		String str = "tet";
+		String str = "test";
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
 		int arr[] = {1,1, 2, 2, 3, 4, 4, 5, 6};
@@ -176,7 +222,10 @@ public class Practice_12 {
 		duplicateinArray(arr);
 		uniArry(arr);
 		arrSet(arr3);
-		uniString(str1);	
+		uniString(str1);
+		checkPalandromeString(str);
+		System.out.println("Reversed String: "+recursiveStr(str));
+		missingElement(missingArr);
 				
 	}
 
