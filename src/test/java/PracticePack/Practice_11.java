@@ -242,7 +242,7 @@ public class Practice_11 {
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
 		int arr[] = {1,1, 2, 2, 3, 4, 4, 5, 6};
-		int arRe[] = {1,1, 2, 2, 3, 4, 4,4, 5, 6};
+		//int arRe[] = {1,1, 2, 2, 3, 4, 4,4, 5, 6};
 		int missingArr[] = {81, 83, 84, 85};
 		Integer arr3[] = {1,1, 2, 2, 3, 4, 4,4, 5, 6};
 		
