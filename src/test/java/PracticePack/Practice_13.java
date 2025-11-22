@@ -111,7 +111,7 @@ public class Practice_13 {
 
 	public static void Owvels(String str) {
 		System.out.println("--------------------------------------------- Program 8  ----------------------------------------------------");
-		boolean status = true;
+		boolean status = false;
 		for(int i=0; i<str.length(); i++)
 		{
 			if(	str.charAt(i) == 'a' ||
@@ -121,13 +121,11 @@ public class Practice_13 {
 				str.charAt(i) == 'u') {
 				
 				System.out.println(str.charAt(i));
-			}else
-			{
-				status = false;
+				status = true;
 			}
 			
 		}
-		if(status = false)
+		if(status==false)
 		{
 			System.out.println("No Wovels are present: "+str);
 		}
@@ -193,7 +191,7 @@ public class Practice_13 {
 		int num2 = 30;
 		int num3 = 121;
 		
-		String str = "tet";
+		String str = "twt";
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
 		int arr[] = {1,1, 2, 2, 3, 4, 4, 5, 6};
