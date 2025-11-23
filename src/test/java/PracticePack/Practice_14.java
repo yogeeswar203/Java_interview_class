@@ -1,7 +1,9 @@
 package PracticePack;
 
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
+
+import org.apache.poi.ddf.EscherColorRef.SysIndexProcedure;
 
 public class Practice_14 {
 	
@@ -36,22 +38,36 @@ public class Practice_14 {
 	public static void UniqArr(int arr[]) {
 		System.out.println("-------------------------------------------- Program 3 --------------------------------------------------");
 		
+		int temp[] = new int[arr.length];
 		int j =0;
-		int temp[] = new int [arr.length];
 		Arrays.sort(arr);
 		
-		for(int i=0; i<arr.length-1; i++)
-		{
+		for(int i =0; i<arr.length-1; i++) {
 			if(arr[i] != arr[i+1])
 			{
 				temp[j++] = arr[i];
 			}
+			
+		}
+		temp[j++] = arr[arr.length-1];
+		int newAr[] = Arrays.copyOf(temp, j);
+		System.out.println("Original String: "+Arrays.toString(arr));
+		System.out.println("Original String: "+Arrays.toString(newAr));
+		System.out.println("-------------------------------------------- Program 4 --------------------------------------------------");
+	}
+	
+	public static String reverseString(String str)
+	{
+		
+		if(str.length()<=1 || str == null)
+		{
+			return str;
 		}
 		
-		temp[j++] = arr[arr.length-1];
-		int newA[] = Arrays.copyOf(temp, j);
-		System.out.println("Original String: "+Arrays.toString(arr));
-		System.out.println("Original String: "+Arrays.toString(newA));
+		char c1 = str.charAt(0);
+		String rem = str.substring(1);
+		
+		return reverseString((rem))+c1;
 		
 	}
 
@@ -60,7 +76,7 @@ public class Practice_14 {
 		int num2 = 30;
 		int num3 = 121;
 		
-		String str = "twt";
+		String str = "test";
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
 		int arr[] = {1,1, 2, 2, 3, 4, 4, 5, 6};
@@ -74,6 +90,7 @@ public class Practice_14 {
 		intSwap(num1, num2);
 		findDuplicatesinArry(arr);
 		UniqArr(arRe);
+		System.out.print(reverseString(str));
 
 	}
 
