@@ -1,7 +1,10 @@
 package PracticePack;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Practice_15 {
@@ -162,12 +165,91 @@ public class Practice_15 {
 		}
 	}
 	
+	public static void secDigit(String str[]) {
+		System.out.println("------------------------------------------------- Program 11 ------------------------------------------------");
+		
+		for(String eachWord:str) {
+			char c1 = eachWord.charAt(1);
+			if(Character.isDigit(c1))
+			{
+				System.out.print(eachWord+" ");
+			}
+		}
+		System.out.println();	
+	}
+	
+	public static void countChar(String str)
+	{
+		System.out.println("------------------------------------------------- Program 12 ------------------------------------------------");
+		Map<Character, Integer> cmap = new HashMap<Character, Integer>();
+		char cr[] = str.toCharArray();
+		
+		for(char c:cr)
+		{
+			
+			if(!String.valueOf(c).isBlank())
+			{
+				if(cmap.containsKey(c))
+				{
+					cmap.put(c, cmap.get(c)+1);
+				}else
+				{
+					cmap.put(c, 1);
+				}
+			}
+		}
+		for(char c:cmap.keySet())
+		{
+			System.out.print(c+":"+cmap.get(c)+" ");
+		}
+		System.out.println();
+		int max = Collections.max(cmap.values());
+		for(char c:cmap.keySet())
+		{
+			if(max == cmap.get(c))
+			{
+				System.out.println("Maximum repeated value is "+c+":"+cmap.get(c));
+			}
+		}
+		
+	}
+	
+	public static void IntCount(int arr[]) {
+		System.out.println("------------------------------------------------- Program 13 ------------------------------------------------");
+		Map<Integer, Integer> imap = new HashMap<Integer, Integer>();
+		
+		for(int i:arr)
+		{
+			if(imap.containsKey(i))
+			{
+				imap.put(i, imap.get(i)+1);
+			}else
+			{
+				imap.put(i, 1);
+			}
+		}
+		
+		for(int i:imap.keySet())
+		{
+			System.out.print(i+":"+imap.get(i)+" ");
+		}
+		System.out.println();
+		int max = Collections.max(imap.values());
+		for(int i:imap.keySet())
+		{
+			if(max==imap.get(i))
+			{
+				System.out.println("Max repeated value is: "+i+":"+imap.get(i));
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		int num1 = 1;
 		int num2 = 30;
 		int num3 = 1981;
 		
-		String str = "Yogeeswar";
+		String str = "tttess";
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
 		int arr[] = {1,1, 2, 2, 3, 4, 4, 5, 6};
@@ -188,6 +270,9 @@ public class Practice_15 {
 		checkPalandromeInt(num3);
 		System.out.println(reverseString(str));
 		reverseString2(str);
+		secDigit(str1);
+		countChar(str);
+		IntCount(arr);
 	}
 
 }
