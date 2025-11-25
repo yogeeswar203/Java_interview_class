@@ -1,6 +1,8 @@
 package PracticePack;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Practice_15 {
 
@@ -29,11 +31,38 @@ public class Practice_15 {
 			}
 		}
 		
+		System.out.println();
 		
 	}
 	
+	public static void uniArr(int arr[]) {
+		System.out.println("------------------------------------------------- Program 3 ------------------------------------------------");
+		int j =0;
+		Arrays.sort(arr);
+		int tem[] = new int[arr.length];
+		
+		for(int i=0; i<arr.length-1; i++)
+		{
+			if(arr[i] !=arr[i+1]) 
+			{
+				tem[j++] = arr[i];
+			}
+		}
+		
+		tem[j++] = arr[arr.length-1];
+		int uniA[] = Arrays.copyOf(tem, j);
+		System.out.println("Original Array: "+Arrays.toString(arr));
+		System.out.println("Unique Array: "+Arrays.toString(uniA));
+	}
 	
-	
+	public static void UnArray(Integer arr[]) {
+
+		System.out.println("------------------------------------------------- Program 4 ------------------------------------------------"); //mmup, jout 
+		System.out.println("Original Array: "+Arrays.toString(arr));
+		Set<Integer> set1 = new HashSet<Integer>(Arrays.asList(arr));
+		Integer UnAr[] = set1.toArray(new Integer[0]);
+		System.out.println("Unique Array: "+Arrays.toString(UnAr));
+	}
 	
 	
 	public static void main(String[] args) {
@@ -54,6 +83,8 @@ public class Practice_15 {
 		
 		intSwap(num1, num2);
 		duplicateValuesInArray(arr);
+		uniArr(arr);
+		UnArray(arr3);
 	}
 
 }
