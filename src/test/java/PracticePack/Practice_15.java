@@ -64,13 +64,110 @@ public class Practice_15 {
 		System.out.println("Unique Array: "+Arrays.toString(UnAr));
 	}
 	
+	public static void UniString(String str[]) {
+		System.out.println("------------------------------------------------- Program 5 ------------------------------------------------");
+		System.out.println("Given String Array: "+Arrays.toString(str));
+		Set<String> set1 = new HashSet<String>(Arrays.asList(str));
+		String Un[] = set1.toArray(new String[0]);
+		System.out.println("Uniques String Array: "+Arrays.toString(Un));
+	}
+	
+	public static void checkPrime(int num) {
+		System.out.println("------------------------------------------------- Program 6 ------------------------------------------------");
+		int c =0;
+		for(int i=1; i<=num; i++)
+		{
+			if(num%i == 0)
+			{
+				c++;
+			}
+		}
+		if(c==2)
+		{
+			System.out.println("Given number is Prime: "+num);
+		}else
+		{
+			System.out.println("Given number is not a Prime: "+num);
+		}
+	}
+	
+	public static void GeneratePrimeNumbers(int num1, int num2)
+	{
+		System.out.println("------------------------------------------------- Program 7 ------------------------------------------------");	
+		for(int i =num1; i<=num2; i++)
+		{
+			int c  = 0;
+			for(int j=1; j<=num2; j++)
+			{
+				if(i%j == 0)
+				{
+					c++;
+				}
+			}
+			if(c==2)
+			{
+				System.out.print(i+" ");
+			}
+		}
+		System.out.println();
+	}
+	
+	public static void checkPalandromeInt(int num1) {
+		System.out.println("------------------------------------------------- Program 8 ------------------------------------------------");
+		int num = num1;
+		int rev = 0;
+		
+		while(num!=0)
+		{
+			rev = rev * 10 + num%10;
+			num = num/10;
+		}
+		if(num1 == rev)
+		{
+			System.out.println("Given number is Palandrome: "+rev);
+		}else
+		{
+			System.out.println("Given number is Not Palandrome: "+num1);
+		}
+		System.out.println("------------------------------------------------- Program 9 ------------------------------------------------");
+	}
+	
+	
+	public static String reverseString(String str) {
+		
+		if(str.length()<=1 || str==null)
+		{
+			return str;
+		}
+		char c1 = str.charAt(0);
+		String rem = str.substring(1);
+		
+		return reverseString((rem))+c1;
+		
+	}
+	
+	public static void reverseString2(String str) {
+		System.out.println("------------------------------------------------- Program 10 ------------------------------------------------");
+		String rev = "";
+		for(int i=str.length(); i<=0; i--)
+		{
+			rev = rev + str.charAt(i);
+		}
+		if(rev.equals(str))
+		{
+			System.out.println("Given String is Palandrome: "+rev);
+		}else
+		{
+			System.out.println("Given String is not a Palandrome: "+str);
+		}
+	}
 	
 	public static void main(String[] args) {
-		int num1 = 12;
+		int num1 = 1;
 		int num2 = 30;
-		int num3 = 1218;
+		int num3 = 1981;
 		
-		String str = "tet";
+		String str = "Yogeeswar";
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
 		int arr[] = {1,1, 2, 2, 3, 4, 4, 5, 6};
@@ -85,6 +182,12 @@ public class Practice_15 {
 		duplicateValuesInArray(arr);
 		uniArr(arr);
 		UnArray(arr3);
+		UniString(str1);
+		checkPrime(num3);
+		GeneratePrimeNumbers(num1, num2);
+		checkPalandromeInt(num3);
+		System.out.println(reverseString(str));
+		reverseString2(str);
 	}
 
 }
