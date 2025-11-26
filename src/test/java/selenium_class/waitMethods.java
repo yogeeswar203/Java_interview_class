@@ -59,7 +59,12 @@ public class waitMethods {
 		 * Thread.sleep(5000); System.out.println("Driver is executed successfully");
 		 */
 		
+		// Implicit Wait
 		dr.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		WebDriverWait mywait2 = new WebDriverWait(dr, Duration.ofSeconds(10));
+		mywait2.until(ExpectedConditions.visibilityOf(dr.findElement(By.xpath(""))));
+		
 		dr.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		WebElement e1 = dr.findElement(By.xpath("//a[text()='OrangeHRM, Inc']"));
 		
@@ -76,6 +81,12 @@ public class waitMethods {
 		
 		dr.switchTo().window(c2);
 		System.out.println(dr.getTitle());
+		
+		for(String win:windId)
+		{
+			dr.switchTo().window(win);
+			System.out.println(dr.getTitle());
+		}
 		Thread.sleep(5000);
 		dr.quit();
 		
