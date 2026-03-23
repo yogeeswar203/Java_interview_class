@@ -1,5 +1,11 @@
 package Practice_Package2;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.common.base.CharMatcher;
+
 public class practice_01 {
 
 	public static void display() {
@@ -23,12 +29,74 @@ public class practice_01 {
 	}
 	
 	
+	public static void charCount(String str) {
+		//System.out.println();
+		System.out.println("****************** Program 3****************");
+		char arr[] = str.toCharArray();
+		Map<Character, Integer> charMap = new HashMap<Character, Integer>();
+		
+		for(char c:arr)
+		{
+			if(!String.valueOf(c).isBlank())
+			{
+				if(charMap.containsKey(c))
+				{
+					charMap.put(c, charMap.get(c)+1);
+				}else
+				{
+					charMap.put(c, 1);
+				}
+			}
+		}
+		for(char c:charMap.keySet())
+			
+		{
+			System.out.print(c+":"+charMap.get(c)+" ");
+		}
+	}
+	
+	
+	public static void intCountintArray(int num[]) {
+		System.out.println();
+		System.out.println("****************** Program 3****************");
+		Map<Integer, Integer> imap = new HashMap<Integer, Integer>();
+		
+		for(int i:num)
+		{
+			if(imap.containsKey(i))
+			{
+				imap.put(i, imap.get(i)+1);
+			}else
+			{
+				imap.put(i, 1);
+			}
+		}
+		
+		for(int i: imap.keySet())
+		{
+			System.out.print(i+":"+imap.get(i)+" ");
+		}
+		System.out.println("");
+		int maxv = Collections.max(imap.values());
+		for(int i:imap.keySet())
+		{
+			if(maxv == imap.get(i))
+			{
+				System.out.println("Maximum repeated value is: "+i+":"+imap.get(i));
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		int num1 = 10;
 		int num2 = 20;
+		String str = "Yogee";
+		int arr[] = {1, 2, 2, 2, 3, 4, 4, 5};
 		
 		display();
 		intSwap(num1, num2);
+		charCount(str);
+		intCountintArray(arr);
 	}
 
 }
