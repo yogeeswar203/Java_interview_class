@@ -148,6 +148,24 @@ public class practice_01 {
 		}
 	}
 	
+	public static void generatePrimeNumners(int num1, int num2) {
+		
+		for(int i = num1; i<=num2; i++)
+		{
+			int c = 0;
+			for(int j=1; j<=num2; j++)
+			{
+				if(i%j == 0) {
+					c++;
+				}
+			}
+			if(c==2)
+			{
+				System.out.print(i+" ");
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		int num1 = 10;
 		int num2 = 20;
@@ -163,6 +181,7 @@ public class practice_01 {
 		revString(str);
 		checkintPalandrome(num3);
 		checkPrime(num1);
+		generatePrimeNumners(num1, num2);
 	}
 
 }
