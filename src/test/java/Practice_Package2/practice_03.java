@@ -1,5 +1,9 @@
 package Practice_Package2;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public class practice_03 {
 	public static void intSwap(int num1, int num2)
 	{
@@ -142,7 +146,75 @@ public class practice_03 {
 		}
 	}
 	
+	public static void countStringChar(String str)
+	{
+		System.out.println("-------------------------------------------------- Program 9------------------------------------------------");
+		
+		char charArr[] = str.toCharArray();
+		Map<Character, Integer> cmap = new HashMap<Character, Integer>();
+		
+		for(char c:charArr)
+		{
+			if(!String.valueOf(c).isBlank())
+			{
+				if(cmap.containsKey(c))
+				{
+					cmap.put(c, cmap.get(c)+1);
+				}else
+				{
+					cmap.put(c, 1);
+				}
+			}
+		}
+		
+		for(char c:cmap.keySet())
+		{
+			System.out.print(c+":"+cmap.get(c)+" ");
+		}
+		System.out.println();
+		int max = Collections.max(cmap.values());
+		
+		
+		for(char c1:cmap.keySet())
+		{
+			if(max==cmap.get(c1))
+			{
+				System.out.println((c1+":"+cmap.get(c1)));
+			}
+		}
+	}
 	
+	public static void countOfEachVal(int arr[])
+	{
+		System.out.println("-------------------------------------------------- Program 10------------------------------------------------");
+		Map<Integer, Integer> imap = new HashMap<Integer, Integer>();
+		
+		for(int i:arr)
+		{
+			if(imap.containsKey(i))
+			{
+				imap.put(i, imap.get(i)+1);
+			}else
+			{
+				imap.put(i, 1);
+			}
+		}
+		
+		int max = Collections.max(imap.values());
+		for(int i:imap.keySet())
+		{
+			if(max == imap.get(i))
+			{
+				System.out.println("Max repeated value: "+i+":"+imap.get(i));
+			}
+		}
+		
+		for(int i:imap.keySet())
+		{
+			System.out.print(i+":"+imap.get(i)+" ");
+		}
+		
+	}
 	
 	
 	
@@ -157,7 +229,7 @@ public class practice_03 {
 		String str = "tet";
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
-		int arr[] = {1,1, 2,2, 2, 3, 4, 4, 5, 6};    
+		int arr[] = {1,1, 2, 3, 4, 4, 5, 6,6,6,6};    
 		int arRe[] = {1,1, 2, 2, 3, 4, 4,4, 5, 6};
 		int missingArr[] = {81, 83, 84, 85};
 		Integer arr3[] = {1,1, 2, 2, 3, 4, 4,4, 5, 6};
@@ -171,8 +243,8 @@ public class practice_03 {
 		System.out.println("Revered string method 2: " +reverseStringMenthod2(str));
 		revint(num3);
 		StringPalandrome(str);
-		//countStringChar(str);
-		//countOfNum(arr);
+		countStringChar(str);
+		countOfEachVal(arr);
 		//System.out.println();
 		
 		
