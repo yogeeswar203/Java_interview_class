@@ -81,6 +81,19 @@ public class Practice_02 {
 		System.out.println("Revered String: "+rev);
 	}
 	
+	public static String reverseStringMenthod2(String str) {
+		if(str.length()<=1 || str == null)
+		{
+			return str;
+		}
+		
+		char c1 = str.charAt(0);
+		String rem = str.substring(1);
+		return reverseStringMenthod2((rem))+c1;
+	}
+	
+	
+	
 	public static void revint(int num1)
 	{
 		System.out.println();
@@ -193,6 +206,7 @@ public class Practice_02 {
 		}
 	}
 
+	
 	public static void main(String[] args) {
 		int a= 10;
 		int b = 20;
@@ -208,6 +222,7 @@ public class Practice_02 {
 		StringPalandrome(str);
 		countStringChar(str);
 		countOfNum(arr);
+		System.out.println("Revered string method 2: " +reverseStringMenthod2(str));
 		
 
 	}
