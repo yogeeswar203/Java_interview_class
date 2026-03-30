@@ -27,14 +27,134 @@ public class practice_03 {
 				System.out.print(eachWord+" ");
 			}
 		}
+		System.out.println();
 	}
-
+	
+	public static void checkPrimeNumber(int num1)
+	{
+		System.out.println("-------------------------------------------------- Program 3 ------------------------------------------------");
+		if(num1>1)
+		{
+			int c =0;
+			for(int i=1; i<=num1; i++)
+			{
+				if(num1%i ==0)
+				{
+					c++;
+				}
+			}
+			if(c==2)
+			{
+				System.out.println("Prime: "+num1);
+			}else
+			{
+				System.out.println("Not Prime: "+num1);
+			}
+			
+		}else
+			
+		{
+			System.out.println("Please eneter the value more than 1");
+		}
+	}
+	
+	public static void generatePrimeNumbers(int num1, int num2)
+	{
+		System.out.println("-------------------------------------------------- Program 4 ------------------------------------------------");
+		for(int i=num1; i<=num2; i++)
+		{
+			int c=0;
+			for(int j=1; j<=num2; j++)
+			{
+				if(i%j == 0)
+				{
+					c++;
+				}
+			}
+			if(c==2)
+			{
+				System.out.print(i+" ");
+			}
+		}
+		System.out.println();
+	}
+	
+	public static void revString(String str)
+	{
+		System.out.println("-------------------------------------------------- Program 5------------------------------------------------");
+		String rev = "";
+		for(int i=str.length()-1; i>=0; i--)
+		{
+			rev = rev + str.charAt(i);
+		}
+		System.out.println("Actual String: "+str);
+		System.out.println("Reversed String: "+rev);
+	}
+	
+	public static String reverseStringMenthod2(String str)
+	{
+		if(str.length()<=1 || str == null)
+		{
+			return str;
+		}
+		
+		char c = str.charAt(0);
+		String rem = str.substring(1);
+		return reverseStringMenthod2((rem))+c;
+	}
+	
+	public static void revint(int num1)
+	{
+		System.out.println("-------------------------------------------------- Program 7------------------------------------------------");
+		int ac = num1;
+		int rev = 0;
+		while(ac!=0)
+		{
+			rev = rev * 10 + ac%10;
+			ac = ac/10;
+		}
+		System.out.println("After reversing the number: "+rev);
+		if(rev == num1)
+		{
+			System.out.println("Given number is Palandrome: "+rev);
+		}else
+		{
+			System.out.println("Given number is not a palandrome: "+num1);
+		}
+	}
+	
+	public static void StringPalandrome(String str)
+	{
+		System.out.println("-------------------------------------------------- Program 8------------------------------------------------");
+		String rev="";
+		
+		for(int i=str.length()-1; i>=0; i--)
+		{
+			rev = rev + str.charAt(i);
+		}
+		
+		if(rev.equals(str))
+		{
+			System.out.println("Given string is Palandrome: "+rev);
+		}else
+		{
+			System.out.println("Given String is not a Palandrome: "+str);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		int num1 = 1;
-		int num2 = 30;
-		int num3 = 1981;
+		int num2 = 23;
+		int num3 = 181;
 		
-		String str = "tttess";
+		String str = "tet";
 		String str1[] = {"t2s", "b5T", "ram", "Raj", "h4", "Raj"};
 				
 		int arr[] = {1,1, 2,2, 2, 3, 4, 4, 5, 6};    
@@ -44,23 +164,25 @@ public class practice_03 {
 
 		intSwap(num1, num2);
 		sceDigit(str1);
-		
-		//checkPrimeNumber(a);
-		//generatePrimeNumbers(a, b);
-		//revString(str);
-		//revint(m);
-		//StringPalandrome(str);
+		checkPrimeNumber(num1);
+		generatePrimeNumbers(num1, num2);
+		revString(str);
+		System.out.println("-------------------------------------------------- Program 6------------------------------------------------");
+		System.out.println("Revered string method 2: " +reverseStringMenthod2(str));
+		revint(num3);
+		StringPalandrome(str);
 		//countStringChar(str);
 		//countOfNum(arr);
 		//System.out.println();
-		//System.out.println("***************** Running Program 9 *************************");
-		//System.out.println("Revered string method 2: " +reverseStringMenthod2(str));
+		
 		
 		// programs on Arrays 
 		//duplicateValue(arr1);
 		//uniArryValues(arr1);
 		//uniQArray(arr1);
 		//uniArraySet(arr2);
+		
+		
 		
 	}
 
