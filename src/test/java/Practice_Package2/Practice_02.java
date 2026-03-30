@@ -1,8 +1,11 @@
 package Practice_Package2;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Practice_02 {
 	
@@ -89,7 +92,8 @@ public class Practice_02 {
 		
 		char c1 = str.charAt(0);
 		String rem = str.substring(1);
-		return reverseStringMenthod2((rem))+c1;
+		return	reverseStringMenthod2((rem))+c1;
+		
 	}
 	
 	
@@ -205,14 +209,81 @@ public class Practice_02 {
 			}
 		}
 	}
+	
+	public static void duplicateValue(int arr[])
+	{
+		System.out.println();
+		System.out.println("***************** Running Program 10 *************************");
+		
+		Arrays.sort(arr);
+		
+		for(int i=0; i<arr.length-1; i++)
+		{
+			if(arr[i] == arr[i+1])
+			{
+				System.out.print(arr[i]+" ");
+			}
+		}
+	}
+	
+	public static void uniArryValues(int arr[])
+	{
+		System.out.println();
+		System.out.println("***************** Running Program 10 *************************");
+		Arrays.sort(arr);
+		for(int i=0; i<arr.length-1; i++)
+		{
+			if(arr[i]!=arr[i+1])
+			{
+				System.out.print(arr[i]+" ");
+			}
+		}
+	}
 
+	public static void uniQArray(int arr[])
+	{
+		System.out.println();
+		System.out.println("***************** Running Program 10 *************************");
+	
+		int j=0;
+		int temp[] = new int[arr.length];
+		Arrays.sort(arr);
+		
+		for(int i=0; i<arr.length-1; i++)
+		{
+			if(arr[i]!=arr[i+1])
+			{
+				temp[j++] = arr[i];
+			}
+		}
+		
+		temp[j++] = arr[arr.length-1];
+		int UniArray[] = Arrays.copyOf(temp, j);
+		System.out.println("Original Array: "+Arrays.toString(arr));
+		System.out.println("Unique String: "+ Arrays.toString(UniArray));
+	}
+	
+	public static void uniArraySet(Integer arr[])
+	{
+		System.out.println();
+		System.out.println("***************** Running Program 10 *************************");
+		
+		Set<Integer> s1 = new HashSet<Integer>(Arrays.asList(arr));
+		Integer newAr[] = s1.toArray(new Integer[0]);
+		
+		System.out.println("Original Array: "+Arrays.toString(arr));
+		System.out.println("Unique Array: "+Arrays.toString(newAr));
+	}
+	
 	
 	public static void main(String[] args) {
 		int a= 10;
 		int b = 20;
-		String str = "tetttttt";
+		String str = "tet";
 		int m = 12521;
 		int arr[] = {1, 2, 2, 2, 3};
+		int arr1[] = {1,1, 2,2, 2, 3, 4, 4, 5, 6};
+		Integer arr2[] = {1,1, 2,2, 2, 3, 4, 4, 5, 6};
 		
 		intSwap(a, b);
 		checkPrimeNumber(a);
@@ -222,7 +293,16 @@ public class Practice_02 {
 		StringPalandrome(str);
 		countStringChar(str);
 		countOfNum(arr);
+		System.out.println();
+		System.out.println("***************** Running Program 9 *************************");
 		System.out.println("Revered string method 2: " +reverseStringMenthod2(str));
+		
+		// programs on Arrays 
+		duplicateValue(arr1);
+		uniArryValues(arr1);
+		uniQArray(arr1);
+		uniArraySet(arr2);
+		// secDigit(str1); UniqueArry(arRe); uniArraySet(arr3);
 		
 
 	}
