@@ -221,8 +221,11 @@ public class Practice_02 {
 		{
 			if(arr[i] == arr[i+1])
 			{
-				System.out.print(arr[i]+" ");
+				if(i==0 || arr[i]!=arr[i-1])
+				{
+					System.out.print(arr[i]+" ");
 			}
+				}
 		}
 	}
 	

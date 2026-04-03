@@ -1,5 +1,6 @@
 package Practice_Package2;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -202,6 +203,36 @@ public class practice_04 {
 		
 	}
 	
+	
+	public static void duplicateValue(int arr[])
+	{
+		System.out.println();
+		System.out.println("***************** Running Program 9 *************************");
+		Arrays.sort(arr);
+		System.out.println("Given Array after sorting: "+Arrays.toString(arr));
+		System.out.println("Duplicate Values are ");
+		for(int i=0; i<arr.length-1; i++)
+		{
+			if(arr[i]==arr[i+1])
+			{
+				if(i==0 || arr[i]!=arr[i-1])
+				{
+					System.out.print(arr[i]+" ");
+				}
+			}
+		}
+	
+	}
+	
+	public static void uniArryValues(int arr[])
+	{
+		System.out.println();
+		System.out.println("***************** Running Program 10 *************************");
+		Arrays.sort(arr);
+		
+	}
+	
+
 
 	public static void main(String[] args) {
 		int a= 11;
@@ -209,7 +240,7 @@ public class practice_04 {
 		String str = "test";
 		int m = 12521;
 		int arr[] = {1, 2, 2, 2, 3};
-		int arr1[] = {1,1,2, 3, 4, 4, 5, 6,6,6};
+		int arr1[] = {1,1,2, 3, 4, 4,4, 5, 6,6,6};
 		Integer arr2[] = {1,1, 2,2, 2, 3, 4, 4, 5, 6};
 		
 		intSwap(a, b);
@@ -225,7 +256,8 @@ public class practice_04 {
 		System.out.println("Revered string method 2: " +reverseStringMenthod2(str));
 		
 		// programs on Arrays 
-		//duplicateValue(arr1);
+		duplicateValue(arr1);
+		
 		//uniArryValues(arr1);
 		//uniQArray(arr1);
 		//uniArraySet(arr2);
