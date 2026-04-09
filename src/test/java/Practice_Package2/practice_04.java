@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.poi.hpsf.Array;
+
 public class practice_04 {
 	
 	public static void intSwap(int num1, int num2)
@@ -224,11 +226,26 @@ public class practice_04 {
 	
 	}
 	
-	public static void uniArryValues(int arr[])
+	public static void uniQArray(int arr[])
 	{
 		System.out.println();
 		System.out.println("***************** Running Program 10 *************************");
+		int j=0;
 		Arrays.sort(arr);
+		int temp[] = new int[arr.length];
+		
+		for(int i=0; i<arr.length-1; i++)
+		{
+			if(arr[i]!=arr[i+1])
+			{
+				temp[j++] = arr[i];
+			}
+		}
+		
+		temp[j++] = arr[arr.length-1];
+		int uniArray[] = Arrays.copyOf(temp, j);
+		System.out.println("Original Array: "+Arrays.toString(arr));
+		System.out.println("Original Array: "+Arrays.toString(uniArray));
 		
 	}
 	
@@ -239,9 +256,9 @@ public class practice_04 {
 		int b = 20;
 		String str = "test";
 		int m = 12521;
-		int arr[] = {1, 2, 2, 2, 3};
+		//int arr[] = {1, 2, 2, 2, 3};
 		int arr1[] = {1,1,2, 3, 4, 4,4, 5, 6,6,6};
-		Integer arr2[] = {1,1, 2,2, 2, 3, 4, 4, 5, 6};
+		//Integer arr2[] = {1,1, 2,2, 2, 3, 4, 4, 5, 6};
 		
 		intSwap(a, b);
 		checkPrime(a);
@@ -259,7 +276,7 @@ public class practice_04 {
 		duplicateValue(arr1);
 		
 		//uniArryValues(arr1);
-		//uniQArray(arr1);
+		uniQArray(arr1);
 		//uniArraySet(arr2);
 		// secDigit(str1); UniqueArry(arRe); uniArraySet(arr3);
 	}
